@@ -1,0 +1,10 @@
+/** @format */
+.wall_heropage {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.wall_mainpage {
+  display: flex;
+  flex-direction: column;
+}

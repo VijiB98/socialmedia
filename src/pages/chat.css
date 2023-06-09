@@ -1,0 +1,6 @@
+/** @format */
+.recent_chat {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

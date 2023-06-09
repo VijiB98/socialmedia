@@ -1,0 +1,36 @@
+/** @format */
+.chat_image > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.chat_main {
+  display: flex;
+  background-color: white;
+  width: 650px;
+
+  align-items: center;
+  padding: 5px;
+}
+.chat_name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 23px;
+}
+.chat_name > h2 {
+  color: blue;
+}
+.chat_name > p {
+  font-size: 18px;
+}
+.chat_hero > h1 {
+  color: blue;
+  background-color: white;
+  width: 650px;
+}
+.chat_content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

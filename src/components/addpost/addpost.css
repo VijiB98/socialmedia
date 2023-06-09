@@ -1,0 +1,63 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hero_creat {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  border: 3px solid gray;
+
+  background-color: white;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.but {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.feed > button {
+  background-color: rgb(27, 101, 125);
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+.image {
+  padding: 10px;
+  width: 100px;
+}
+.creat_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.566);
+  width: 100%;
+  height: 100vh;
+}
+.creat_main > button {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+.post > h1 {
+  color: black;
+
+  background: none;
+}
