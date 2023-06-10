@@ -6,7 +6,6 @@ import icon from "../../assets/images/tick.jpeg";
 import "./profile.css";
 
 const Media = () => {
-  const [state, setState] = React.useState(false);
   const Profile = [
     {
       Image: icon,
@@ -16,8 +15,8 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+      id: 1,
+      followed: false,
     },
     {
       Image: icon,
@@ -27,10 +26,13 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+      id: 2,
+      followed: false,
+      // sumit: "Follow",
+      // button: "Unfollow",
     },
     {
+      id: 3,
       Image: icon,
       Name: "Ajith",
       Designation: "Teacher",
@@ -38,8 +40,10 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+
+      followed: false,
+      // sumit: "Follow",
+      // button: "Unfollow",
     },
     {
       Image: icon,
@@ -49,8 +53,10 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+      id: 4,
+      followed: false,
+      // sumit: "Follow",
+      // button: "Unfollow",
     },
     {
       Image: icon,
@@ -60,10 +66,13 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+      id: 5,
+      followed: false,
+      // sumit: "Follow",
+      // button: "Unfollow",
     },
     {
+      id: 6,
       Image: icon,
       Name: "Guru",
       Designation: "Web Designer",
@@ -71,11 +80,23 @@ const Media = () => {
       follers: "2M Followers",
       post: "43+posts",
       Msg: " Message",
-      sumit: "Follow",
-      button: "Unfollow",
+      followed: false,
+
+      // sumit: "Follow",
+      // button: "Unfollow",
     },
   ];
-  const renderMedia = Profile.map((Medialist) => {
+  const [friends, setFriends] = React.useState(Profile);
+  const Handlefriends = (friendId) => {
+    setFriends((prevfriends) =>
+      prevfriends.map((friendsitem) =>
+        friendsitem.id === friendId
+          ? { ...friendsitem, followed: !friendsitem.followed }
+          : friendsitem
+      )
+    );
+  };
+  const renderMedia = friends.map((friendsitem) => {
     return (
       <div className="media_main">
         <div className="empty_image"></div>
@@ -83,25 +104,20 @@ const Media = () => {
           {" "}
           <div className="pic">
             {" "}
-            <img src={Medialist.Image} alt="" />
-            <h1>{Medialist.Name}</h1>
+            <img src={friendsitem.Image} alt="" />
+            <h1>{friendsitem.Name}</h1>
           </div>{" "}
-          <p>{Medialist.Designation}</p>
-          <p>{Medialist.Bio}</p>
-          <h2>{Medialist.follers}</h2>
+          <p>{friendsitem.Designation}</p>
+          <p>{friendsitem.Bio}</p>
+          <h2>{friendsitem.follers}</h2>
           <div className="media_button">
             {" "}
-            <p>{Medialist.post}</p> <button>{Medialist.Msg}</button>{" "}
+            <p>{friendsitem.post}</p>
+            <button>{friendsitem.Msg}</button>{" "}
           </div>{" "}
-          {!state ? (
-            <button id="click" onClick={() => setState(true)}>
-              {Medialist.sumit}
-            </button>
-          ) : (
-            <button id="click" onClick={() => setState(false)}>
-              {Medialist.button}
-            </button>
-          )}
+          <button onClick={() => Handlefriends(friendsitem.id)}>
+            {friendsitem.followed ? "Unfollow" : "follow"}
+          </button>
           {""}
         </div>
       </div>
